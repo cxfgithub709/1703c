@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper   
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"   
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bw.mapper.ShopDao">
+
+	<select id="listall" resultType="com.bw.entity.Shop" parameterType="string">
+		select * from shop s, ping p, s_p sp where s.sid=sp.sid and p.pid=sp.pid 
+	</select>
+	
+	
+	<select id="pingall" resultType="com.bw.entity.Ping"> 
+		select * from ping
+	</select>
+	
+	
+	<insert id="addping" parameterType="com.bw.entity.Shop">
+		insert into s_p (sid,pid) values (#{sid},#{pid})
+	</insert>
+	
+	<select id="pdate" parameterType="int" resultType="com.bw.entity.Shop" > 
+		select * from shop s, ping p, s_p sp where s.sid=sp.sid and p.pid=sp.pid and s.sid=#{0}
+	</select>
+	
+	
+	<delete id="delall" parameterType="string">
+		delete from shop where sid in(#{0})
+	</delete>
+	
+</mapper>
