@@ -27,11 +27,9 @@ public class ShopController {
 	//列表
 	@RequestMapping("list.do")
 	public String listall(ModelMap map,String sname){
-		
 		List<Shop> list = service.listall(sname);
 		map.put("list", list);
 		return "list";
-		
 	}
 	
 	//添加
