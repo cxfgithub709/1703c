@@ -59,10 +59,10 @@ public class AssertUtil {
 	}
 	
 	
-	//方法8：断言值必须大于0，如果小于或等于0，则抛出自定义异常，异常消息为第2个参数默认消息。 (5分)
+//	方法8：断言值必须大于0，如果小于或等于0，则抛出自定义异常，异常消息为第2个参数默认消息。 (5分)
 	public static void greaterThanZero(BigDecimal value, String message){
 		int compareTo = value.compareTo(new BigDecimal(0));
-		if(!(compareTo >= 0)){
+		if(!(compareTo > 0)){
 			throw new Exception(message);
 		}
 	}

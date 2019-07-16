@@ -65,9 +65,4 @@ public class TwoDemo {
 			e.printStackTrace();
 		}
 	}
-	
-	
-	
-	
-	
 }
